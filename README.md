@@ -9,15 +9,18 @@ This project predicts flight delays for Airline Operations Control Centers (AOCC
 ```
 AOCC_FlightDelayAI/
 ├── src/
-│   ├── Airlines_Services_ML_Approachs/      # .NET 9 API with Swagger, SignalR, Controllers
-│   └── Training/                            # Console project to train and export ML model
+│ ├── Airlines_Services_ML_Approachs/ # .NET 9 API with Swagger, SignalR, Controllers
+│ └── Training/ # Console project to train and export ML model
 ├── MLModels/
-│   └── FlightDelayModel.zip                 # Trained ML.NET model file
+│ └── FlightDelayModel.zip # Trained ML.NET model file
 ├── docker/
-│   ├── api.Dockerfile                       # Dockerfile for the API project
-│   ├── training.Dockerfile                  # Dockerfile for the training project
-│   └── docker-compose.yml                   # Compose setup for API and training
-├── .dockerignore                            # Docker cleanup
+│ ├── api.Dockerfile # Dockerfile for the API project
+│ ├── training.Dockerfile # Dockerfile for the training project
+│ └── docker-compose.yml # Compose setup for API and training
+├── .dockerignore # Prevents unnecessary files in Docker image
+├── .gitignore # Git ignored files
+├── .gitattributes # Git metadata
+├── LICENSE.txt
 └── README.md
 ```
 
