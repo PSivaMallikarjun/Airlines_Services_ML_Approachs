@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: docker/api.Dockerfile
+    image: flightdelay-api:dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - ../MLModels:/app/MLModels
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+  trainer:
+    build:
+      context: ..
+      dockerfile: docker/training.Dockerfile
+    image: flightdelay-train:dev
+    volumes:
+      - ../src/Training/data:/data
+      - ../MLModels:/out/MLModels
+    command: ["dotnet", "Training.dll"]
